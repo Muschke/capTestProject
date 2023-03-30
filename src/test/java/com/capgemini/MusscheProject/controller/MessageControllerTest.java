@@ -72,19 +72,19 @@ class MessageControllerTest {
 
     @Test
     void addMessageWithInvalidMessageIsRejected() {
-        IncomingMessage incomingMessageInvalidTitle_1 = new IncomingMessage("junitTestTitle", "");
-        IncomingMessage incomingMessageInvalidTitle_2 = new IncomingMessage("junitTestTitle", " ");
-        IncomingMessage incomingMessageInvalidTitle_3 = new IncomingMessage("junitTestTitle", new String());
+        IncomingMessage incomingMessageInvalidMessage_1 = new IncomingMessage("junitTestTitle", "");
+        IncomingMessage incomingMessageInvalidMessage_2 = new IncomingMessage("junitTestTitle", " ");
+        IncomingMessage incomingMessageInvalidMessage_3 = new IncomingMessage("junitTestTitle", new String());
 
-        ResponseEntity<String> response = messageController.addMessage(incomingMessageInvalidTitle_1);
+        ResponseEntity<String> response = messageController.addMessage(incomingMessageInvalidMessage_1);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.valueOf(400));
         assertThat(response.getBody().toString()).isEqualTo("invalid message");
 
-        ResponseEntity<String> response2 = messageController.addMessage(incomingMessageInvalidTitle_2);
+        ResponseEntity<String> response2 = messageController.addMessage(incomingMessageInvalidMessage_2);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.valueOf(400));
         assertThat(response.getBody().toString()).isEqualTo("invalid message");
 
-        ResponseEntity<String> response3 = messageController.addMessage(incomingMessageInvalidTitle_3);
+        ResponseEntity<String> response3 = messageController.addMessage(incomingMessageInvalidMessage_3);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.valueOf(400));
         assertThat(response.getBody().toString()).isEqualTo("invalid message");
     }
