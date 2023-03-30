@@ -1,0 +1,1 @@
+insert into messages(created, message, version, title) values ("2023-01-01 15:00:00.000000", "junitTestMessage", 1, "JunitTestTitle");
