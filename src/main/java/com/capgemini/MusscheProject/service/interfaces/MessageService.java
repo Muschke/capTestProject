@@ -1,4 +1,4 @@
-package com.capgemini.MusscheProject.service;
+package com.capgemini.MusscheProject.service.interfaces;
 
 public interface MessageService {
     String saveMessage(String title, String message);

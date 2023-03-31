@@ -2,13 +2,14 @@ package com.capgemini.MusscheProject.service;
 
 import com.capgemini.MusscheProject.entities.Message;
 import com.capgemini.MusscheProject.repository.MessageRepository;
+import com.capgemini.MusscheProject.service.interfaces.MessageService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
-public class DefaultMessageService implements MessageService{
+public class DefaultMessageService implements MessageService {
     private final MessageRepository messageRepository;
 
     public DefaultMessageService(MessageRepository messageRepository) {

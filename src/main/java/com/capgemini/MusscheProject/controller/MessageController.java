@@ -1,12 +1,10 @@
 package com.capgemini.MusscheProject.controller;
 
-import com.capgemini.MusscheProject.entities.Message;
 import com.capgemini.MusscheProject.payload.IncomingMessage;
-import com.capgemini.MusscheProject.service.MessageService;
+import com.capgemini.MusscheProject.service.interfaces.ApiService;
+import com.capgemini.MusscheProject.service.interfaces.MessageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.sound.midi.Soundbank;
 
 @RestController
 @RequestMapping("/message")
@@ -15,6 +13,7 @@ public class MessageController {
 
     public MessageController(MessageService messageService) {
         this.messageService = messageService;
+
     }
 
     @GetMapping("/randommessage")
@@ -37,5 +36,7 @@ public class MessageController {
         String response = messageService.saveMessage(title, message);
         return ResponseEntity.ok(response);
     }
+
+
 
 }

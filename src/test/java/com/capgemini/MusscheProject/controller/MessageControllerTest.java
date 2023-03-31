@@ -1,8 +1,10 @@
 package com.capgemini.MusscheProject.controller;
 
+import com.capgemini.MusscheProject.api.RapidApi;
 import com.capgemini.MusscheProject.entities.Message;
 import com.capgemini.MusscheProject.payload.IncomingMessage;
-import com.capgemini.MusscheProject.service.MessageService;
+import com.capgemini.MusscheProject.service.interfaces.ApiService;
+import com.capgemini.MusscheProject.service.interfaces.MessageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

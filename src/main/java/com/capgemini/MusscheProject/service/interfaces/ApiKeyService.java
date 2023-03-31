@@ -1,4 +1,4 @@
-package com.capgemini.MusscheProject.service;
+package com.capgemini.MusscheProject.service.interfaces;
 
 import com.capgemini.MusscheProject.entities.ApiKey;
 
