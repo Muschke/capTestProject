@@ -8,6 +8,12 @@ public class PojoWeather {
     @JsonProperty("current")
     private PojoCurrent current;
 
+    public PojoWeather(PojoCurrent current) {
+        this.current = current;
+    }
+
+    protected PojoWeather(){}
+
     public PojoCurrent getCurrent() {
         return current;
     }

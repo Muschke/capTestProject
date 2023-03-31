@@ -5,6 +5,7 @@ import com.capgemini.MusscheProject.enums.Cities;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
 import com.capgemini.MusscheProject.service.interfaces.CombinedMessageService;
 import com.capgemini.MusscheProject.service.interfaces.MessageService;
+import org.apache.catalina.valves.rewrite.InternalRewriteMap;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -30,7 +31,7 @@ public class DefaultCombinedMessageService implements CombinedMessageService {
 
         builder.append(", it's currently " + apiService.provideWeatherDetails(city) +"°C.");
         builder.append("\nRemember, " + apiService.provideRandomQuote());
-        builder.append("Even though " + apiService.provideRandomDogFact());
+        builder.append(" Even though " + apiService.provideRandomDogFact());
 
         return builder.toString();
     }

@@ -8,6 +8,11 @@ public class PojoRandomQuote {
       @JsonProperty("text")
       private String text;
 
+    public PojoRandomQuote(String text) {
+        this.text = text;
+    }
+    protected PojoRandomQuote(){}
+
     public String getText() {
         return text;
     }

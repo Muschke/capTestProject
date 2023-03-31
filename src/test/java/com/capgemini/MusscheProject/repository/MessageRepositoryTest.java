@@ -21,9 +21,6 @@ class MessageRepositoryTest extends AbstractTransactionalJUnit4SpringContextTest
         this.messageRepository = messageRepository;
     }
 
-//    Boolean existsByTitle(String title);
-//    Message findByTitle(String title);
-//    List<Message> returnRandomMessage();
 
     @Test
     void existsByTitleWorksWithExistingTitle(){
@@ -45,9 +42,14 @@ class MessageRepositoryTest extends AbstractTransactionalJUnit4SpringContextTest
     }
 
     @Test
-    void findById(){
+    void findByIdWorks(){
         assertThat(messageRepository.findById(idMessage()))
                 .hasValueSatisfying(message -> assertThat(message.getMessage()).isEqualTo("junitTestMessage"));
+    }
+
+    @Test
+    void findAllWorks(){
+        assertThat(messageRepository.findAll()).hasSize(countRowsInTable(MESSAGES));
     }
 
     @Test

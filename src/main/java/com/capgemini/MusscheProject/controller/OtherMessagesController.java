@@ -3,6 +3,7 @@ package com.capgemini.MusscheProject.controller;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,8 +27,8 @@ public class OtherMessagesController {
         return apiService.provideRandomDogFact();
     }
 
-    @GetMapping("/weatherantwerp")
-    public int getweather(){
-        return apiService.provideWeatherDetails("Antwerp");
+    @GetMapping("/weatherantwerp/{city}")
+    public int getweather(@PathVariable String city){
+        return apiService.provideWeatherDetails(city);
     }
 }

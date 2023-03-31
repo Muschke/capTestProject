@@ -42,15 +42,6 @@ public class MessageControllerIntegrationTest /*extends AbstractTransactionalJUn
                 .andExpect(content().contentType("text/plain;charset=UTF-8"));
     }
 
-//    @PostMapping("/addMessage")
-//    public ResponseEntity<String> addMessage(@RequestBody IncomingMessage incomingMessage){
-//        String title = incomingMessage.getTitle();
-//        String message = incomingMessage.getMessage();
-//
-//        String response = messageService.saveMessage(title, message);
-//        return ResponseEntity.ok(response);
-//    }
-
     @Test
     void addMessageWithCorrectMessageWorks() throws Exception {
         mockMvc.perform(post(URI + "addMessage")

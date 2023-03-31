@@ -8,6 +8,12 @@ public class PojoCurrent {
     @JsonProperty("temperature")
     private int temperature;
 
+    public PojoCurrent(int temperature) {
+        this.temperature = temperature;
+    }
+
+    protected PojoCurrent(){}
+
     public int getTemperature() {
         return temperature;
     }

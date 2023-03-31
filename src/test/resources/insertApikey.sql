@@ -1,0 +1,1 @@
+insert into apikeys(api_host, api_key, name, renewals) values ("testhost", "testapikey", "testapiname", 0);

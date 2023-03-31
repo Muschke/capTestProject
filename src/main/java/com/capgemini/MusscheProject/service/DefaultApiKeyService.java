@@ -15,8 +15,8 @@ public class DefaultApiKeyService implements ApiKeyService {
 
     @Override
     public String saveApiKey(ApiKey apiKey) {
-        //This has to be worked out when there is a frontend that can deliver a new key
-        return "method not working yet";
+        apiKeyRepository.save(apiKey);
+        return "key saved succesfully";
     }
 
     @Override

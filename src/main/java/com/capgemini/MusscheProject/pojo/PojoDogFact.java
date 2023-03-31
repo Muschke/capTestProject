@@ -10,6 +10,12 @@ public class PojoDogFact {
     @JsonProperty("facts")
     private ArrayList fact;
 
+    public PojoDogFact(ArrayList fact) {
+        this.fact = fact;
+    }
+
+    protected PojoDogFact(){}
+
     public ArrayList getFact() {
         return fact;
     }
