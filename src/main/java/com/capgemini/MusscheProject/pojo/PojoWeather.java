@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PojoRandomQuote {
-      @JsonProperty("text")
-      private String text;
+public class PojoWeather {
+    @JsonProperty("current")
+    private PojoCurrent current;
 
-    public String getText() {
-        return text;
+    public PojoCurrent getCurrent() {
+        return current;
     }
 }

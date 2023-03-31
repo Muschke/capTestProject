@@ -27,7 +27,7 @@ public class OtherMessagesController {
     }
 
     @GetMapping("/weatherantwerp")
-    public String getweather(){
+    public int getweather(){
         return apiService.provideWeatherDetails("Antwerp");
     }
 }

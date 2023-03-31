@@ -1,5 +1,6 @@
 package com.capgemini.MusscheProject.api;
 
+import com.capgemini.MusscheProject.pojo.PojoDogFact;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -12,10 +13,10 @@ public class DogFactApi {
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
 
-    public ResponseEntity<?> getRandomFact(String host){
+    public ResponseEntity<PojoDogFact> getRandomFact(String host){
         String URI = "https://"+ host +"/api/facts";
         HttpEntity<Object> entity = new HttpEntity<Object>(headers);
-        return restTemplate.exchange(URI, HttpMethod.GET, entity, Object.class);
+        return restTemplate.exchange(URI, HttpMethod.GET, entity, PojoDogFact.class);
     }
 
 }

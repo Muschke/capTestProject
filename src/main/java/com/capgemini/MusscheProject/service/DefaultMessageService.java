@@ -43,4 +43,9 @@ public class DefaultMessageService implements MessageService {
     public String getRandomMessage() {
         return messageRepository.returnRandomMessage().get(0).getMessage();
     }
+
+    @Override
+    public Message getMessageForCity(String title) {
+        return messageRepository.findByTitle(title);
+    }
 }

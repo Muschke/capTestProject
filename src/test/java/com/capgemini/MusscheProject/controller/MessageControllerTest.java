@@ -4,6 +4,7 @@ import com.capgemini.MusscheProject.api.RapidApi;
 import com.capgemini.MusscheProject.entities.Message;
 import com.capgemini.MusscheProject.payload.IncomingMessage;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
+import com.capgemini.MusscheProject.service.interfaces.CombinedMessageService;
 import com.capgemini.MusscheProject.service.interfaces.MessageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,9 +28,12 @@ class MessageControllerTest {
     @Mock
     MessageService messageService;
 
+    @Mock
+    CombinedMessageService combinedMessageService;
+
     @BeforeEach
     void setUp() {
-        messageController = new MessageController(messageService);
+        messageController = new MessageController(messageService, combinedMessageService);
         incomingMessage = new IncomingMessage("junitTestTitle", "junitTestMessage");
 
     }

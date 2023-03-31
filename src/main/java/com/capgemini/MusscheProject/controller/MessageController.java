@@ -2,6 +2,7 @@ package com.capgemini.MusscheProject.controller;
 
 import com.capgemini.MusscheProject.payload.IncomingMessage;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
+import com.capgemini.MusscheProject.service.interfaces.CombinedMessageService;
 import com.capgemini.MusscheProject.service.interfaces.MessageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/message")
 public class MessageController {
     private final MessageService messageService;
+    private final CombinedMessageService combinedMessageService;
 
-    public MessageController(MessageService messageService) {
+    public MessageController(MessageService messageService, CombinedMessageService combinedMessageService) {
         this.messageService = messageService;
+        this.combinedMessageService = combinedMessageService;
 
+    }
+    @GetMapping("/combinedMessage/{city}")
+    public String getCombinedMessage(@PathVariable String city){
+        return  combinedMessageService.provideCombinedMessage(city);
     }
 
     @GetMapping("/randommessage")

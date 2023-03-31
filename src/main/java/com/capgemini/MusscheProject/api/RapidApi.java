@@ -15,10 +15,10 @@ public class RapidApi {
     HttpHeaders headers = new HttpHeaders();
 
 
-    public ResponseEntity<?> getFamousQuote(String key, String host){
+    public ResponseEntity<PojoRandomQuote[]> getFamousQuote(String key, String host){
         String URI = "https://"+ host +"/random?category=all&count=2";
         HttpEntity<Object> entity = new HttpEntity<Object>(setHeaders(headers, key, host));
-        return restTemplate.exchange(URI, HttpMethod.GET, entity, Object.class);
+        return restTemplate.exchange(URI, HttpMethod.GET, entity, PojoRandomQuote[].class);
     }
 
     private HttpHeaders setHeaders(HttpHeaders headers, String key, String host){
