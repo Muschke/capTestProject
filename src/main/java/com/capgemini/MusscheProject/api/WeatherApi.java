@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class DogFactApi {
+public class WeatherApi {
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
 
-    public ResponseEntity<?> getRandomFact(String host){
-        String URI = "https://"+ host +"/api/facts";
+
+    public ResponseEntity<?> getWeatherOfSpecificCity(String key, String host,String city){
+        String URI = "http://"+host+"/current?access_key="+key+"&query="+city;
         HttpEntity<Object> entity = new HttpEntity<Object>(headers);
         return restTemplate.exchange(URI, HttpMethod.GET, entity, Object.class);
     }

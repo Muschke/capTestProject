@@ -25,4 +25,9 @@ public class OtherMessagesController {
     public String getDogFact(){
         return apiService.provideRandomDogFact();
     }
+
+    @GetMapping("/weatherantwerp")
+    public String getweather(){
+        return apiService.provideWeatherDetails("Antwerp");
+    }
 }

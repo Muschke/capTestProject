@@ -1,5 +1,6 @@
 package com.capgemini.MusscheProject.api;
 
+import com.capgemini.MusscheProject.pojo.PojoRandomQuote;
 import org.hibernate.annotations.Comment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -17,7 +18,7 @@ public class RapidApi {
     public ResponseEntity<?> getFamousQuote(String key, String host){
         String URI = "https://"+ host +"/random?category=all&count=2";
         HttpEntity<Object> entity = new HttpEntity<Object>(setHeaders(headers, key, host));
-        return restTemplate.exchange(URI, HttpMethod.GET, entity, String.class);
+        return restTemplate.exchange(URI, HttpMethod.GET, entity, Object.class);
     }
 
     private HttpHeaders setHeaders(HttpHeaders headers, String key, String host){
