@@ -17,8 +17,12 @@ public class OtherMessagesController {
 
 
     @GetMapping("/randomquote")
-    public void getQuote(){
-        System.out.println(apiService.provideRandomQuote());
+    public String getQuote(){
+        return apiService.provideRandomQuote();
+    }
 
+    @GetMapping("/randomdogfact")
+    public String getDogFact(){
+        return apiService.provideRandomDogFact();
     }
 }
