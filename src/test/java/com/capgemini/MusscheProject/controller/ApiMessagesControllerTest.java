@@ -7,36 +7,35 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-class OtherMessagesControllerTest {
-    private OtherMessagesController otherMessagesController;
+class ApiMessagesControllerTest {
+    private ApiMessagesController apiMessagesController;
 
     @Mock
     ApiService apiService;
 
     @BeforeEach
     void setUp() {
-        otherMessagesController = new OtherMessagesController(apiService);
+        apiMessagesController = new ApiMessagesController(apiService);
     }
 
     @Test
     void getQuoteWorks() {
-        otherMessagesController.getQuote();
+        apiMessagesController.getQuote();
         verify(apiService).provideRandomQuote();
     }
 
     @Test
     void getDogFactWorks() {
-        otherMessagesController.getDogFact();
+        apiMessagesController.getDogFact();
         verify(apiService).provideRandomDogFact();
     }
 
     @Test
     void getweatherWorks() {
-        otherMessagesController.getweather("Antwerp");
+        apiMessagesController.getweather("Antwerp");
         verify(apiService).provideWeatherDetails("Antwerp");
     }
 

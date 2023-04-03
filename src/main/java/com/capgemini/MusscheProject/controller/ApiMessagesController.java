@@ -1,7 +1,6 @@
 package com.capgemini.MusscheProject.controller;
 
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/othermessage")
-public class OtherMessagesController {
+public class ApiMessagesController {
     private final ApiService apiService;
 
-    public OtherMessagesController(ApiService apiService) {
+    public ApiMessagesController(ApiService apiService) {
         this.apiService = apiService;
     }
 
