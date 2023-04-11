@@ -20,6 +20,7 @@ public class MessageController {
     }
     @GetMapping("/combinedMessage/{city}")
     public String getCombinedMessage(@PathVariable String city){
+        //this test is missing
         return  combinedMessageService.provideCombinedMessage(city);
     }
 
