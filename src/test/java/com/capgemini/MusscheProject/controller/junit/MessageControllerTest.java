@@ -1,6 +1,7 @@
-package com.capgemini.MusscheProject.controller;
+package com.capgemini.MusscheProject.controller.junit;
 
 import com.capgemini.MusscheProject.api.RapidApi;
+import com.capgemini.MusscheProject.controller.MessageController;
 import com.capgemini.MusscheProject.entities.Message;
 import com.capgemini.MusscheProject.payload.IncomingMessage;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
@@ -13,6 +14,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import static org.mockito.Mockito.verify;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,6 +39,13 @@ class MessageControllerTest {
         messageController = new MessageController(messageService, combinedMessageService);
         incomingMessage = new IncomingMessage("junitTestTitle", "junitTestMessage");
 
+    }
+
+
+    @Test
+    void getCombinedMessageWorks(){
+        messageController.getCombinedMessage("Antwerpen");
+        verify(combinedMessageService).provideCombinedMessage("Antwerpen");
     }
 
     @Test

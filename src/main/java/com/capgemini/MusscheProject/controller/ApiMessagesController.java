@@ -26,7 +26,7 @@ public class ApiMessagesController {
         return apiService.provideRandomDogFact();
     }
 
-    @GetMapping("/weatherantwerp/{city}")
+    @GetMapping("/weather/{city}")
     public int getweather(@PathVariable String city){
         return apiService.provideWeatherDetails(city);
     }

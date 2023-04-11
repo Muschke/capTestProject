@@ -1,4 +1,4 @@
-package com.capgemini.MusscheProject.controller;
+package com.capgemini.MusscheProject.controller.integration;
 
 
 import com.capgemini.MusscheProject.payload.IncomingMessage;

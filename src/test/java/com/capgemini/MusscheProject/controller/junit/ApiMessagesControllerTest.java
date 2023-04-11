@@ -1,5 +1,6 @@
-package com.capgemini.MusscheProject.controller;
+package com.capgemini.MusscheProject.controller.junit;
 
+import com.capgemini.MusscheProject.controller.ApiMessagesController;
 import com.capgemini.MusscheProject.service.interfaces.ApiService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
